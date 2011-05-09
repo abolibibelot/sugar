@@ -17,7 +17,7 @@
     public class RegexPattern {
         public const string ALPHA = @"\P{L}";
         public const string ALPHA_NUMERIC = @"\W";
-        public const string ALPHA_NUMERIC_SPACE = @"[\W\S]";
+        public const string ALPHA_NUMERIC_SPACE = @"[^\w\s]";
         public const string CREDIT_CARD_AMERICAN_EXPRESS = @"^(?:(?:[3][4|7])(?:\d{13}))$";
         public const string CREDIT_CARD_CARTE_BLANCHE = @"^(?:(?:[3](?:[0][0-5]|[6|8]))(?:\d{11,12}))$";
         public const string CREDIT_CARD_DINERS_CLUB = @"^(?:(?:[3](?:[0][0-5]|[6|8]))(?:\d{11,12}))$";
