@@ -15,9 +15,9 @@
     /// Summary for the RegexPattern class
     /// </summary>
     public class RegexPattern {
-        public const string ALPHA = "[^a-zA-Z]";
-        public const string ALPHA_NUMERIC = "[^a-zA-Z0-9]";
-        public const string ALPHA_NUMERIC_SPACE = @"[^a-zA-Z0-9\s]";
+        public const string ALPHA = @"\P{L}";
+        public const string ALPHA_NUMERIC = @"\W";
+        public const string ALPHA_NUMERIC_SPACE = @"[\W\S]";
         public const string CREDIT_CARD_AMERICAN_EXPRESS = @"^(?:(?:[3][4|7])(?:\d{13}))$";
         public const string CREDIT_CARD_CARTE_BLANCHE = @"^(?:(?:[3](?:[0][0-5]|[6|8]))(?:\d{11,12}))$";
         public const string CREDIT_CARD_DINERS_CLUB = @"^(?:(?:[3](?:[0][0-5]|[6|8]))(?:\d{11,12}))$";
@@ -34,7 +34,7 @@
         public const string EMBEDDED_CLASS_NAME_UNDERSCORE_REPLACE = "^UNDERSCORE.*?UNDERSCORE";
         public const string GUID = "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
         public const string IP_ADDRESS = @"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
-        public const string LOWER_CASE = @"^[a-z]+$";
+        public const string LOWER_CASE = @"^\p{Ll}+$";
         public const string NUMERIC = "[^0-9]";
         public const string SOCIAL_SECURITY = @"^\d{3}[-]?\d{2}[-]?\d{4}$";
         public const string SQL_EQUAL = @"\=";
@@ -51,7 +51,7 @@
         public const string STRONG_PASSWORD =
             @"(?=^.{8,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*";
 
-        public const string UPPER_CASE = @"^[A-Z]+$";
+        public const string UPPER_CASE = @"^\p{Lu}+$";
         public const string URL = @"^^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&%\$#_=]*)?$";
         public const string US_CURRENCY = @"^\$(([1-9]\d*|([1-9]\d{0,2}(\,\d{3})*))(\.\d{1,2})?|(\.\d{1,2}))$|^\$[0](.00)?$";
         public const string US_TELEPHONE = @"^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$";
